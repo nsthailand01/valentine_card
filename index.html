@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Valentine Card 💖</title>
+
+<style>
+:root {
+  --bg-pink: #ffe5ec;
+  --env-base: #f08080;
+  --env-flap: #d46a6a;
+  --env-front: #f49797;
+}
+
+body {
+  background: var(--bg-pink);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Tahoma, sans-serif;
+}
+
+/* ===== ซอง ===== */
+.envelope-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.envelope {
+  width: 300px;
+  height: 200px;
+  background: var(--env-base);
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+.lid {
+  position: absolute;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 110px solid var(--env-flap);
+  transform-origin: top;
+  transition: .5s;
+  z-index: 4;
+}
+
+.envelope::before,
+.envelope::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+  z-index: 3;
+}
+
+.envelope::before {
+  border-left: 150px solid var(--env-front);
+  border-right: 150px solid transparent;
+}
+
+.envelope::after {
+  border-left: 150px solid transparent;
+  border-right: 150px solid var(--env-front);
+}
+
+.front-flap {
+  position: absolute;
+  bottom: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 105px solid #f8adad;
+  z-index: 3;
+}
+
+/* ===== การ์ด ===== */
+.card {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  width: 280px;
+  height: 180px;
+  perspective: 1200px;
+  transition: .6s;
+  z-index: 2;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: .8s;
+}
+
+.card.open .card-inner {
+  transform: rotateY(-180deg);
+}
+
+.card-cover,
+.card-inside {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 6px;
+}
+
+/* ปก */
+.card-cover {
+  background: linear-gradient(135deg, #ffb3c6, #ff8fab);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card-cover h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.card-cover span {
+  font-size: .85rem;
+  opacity: .9;
+}
+
+/* ด้านใน */
+.card-inside {
+  background: #fff;
+  transform: rotateY(180deg);
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.card-content {
+  height: 100%;
+  overflow-y: auto;
+  text-align: center;
+  color: #444;
+  line-height: 1.7;
+}
+
+.card-content h4 {
+  margin-top: 0;
+  color: #e63946;
+}
+
+/* ===== Hover ===== */
+.envelope-wrapper:hover .lid {
+  transform: rotateX(180deg);
+}
+
+.envelope-wrapper:hover .card {
+  transform: translateY(-130px);
+  height: 260px;
+  z-index: 5;
+}
+
+/* หัวใจ */
+.heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 30px;
+  z-index: 6;
+  transition: .3s;
+}
+
+.envelope-wrapper:hover .heart {
+  opacity: 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="envelope-wrapper">
+  <div class="lid"></div>
+  <div class="front-flap"></div>
+
+  <div class="card" id="card">
+    <div class="card-inner">
+
+      <!-- ปก -->
+      <div class="card-cover">
+        <h3>💌 To My Love</h3>
+        <span>คลิกเพื่อเปิด / ปิดการ์ด</span>
+      </div>
+
+      <!-- ด้านใน -->
+      <div class="card-inside">
+        <div class="card-content">
+          <h4>Happy Valentine's Day ❤️</h4>
+
+          <p>ถึง <b>คุณครูออมที่รัก</b></p>
+
+          <p>
+            ตั้งแต่วันแรกที่เราได้เจอกัน  
+            (ที่โรงแรม 55555 🤭)  
+            เค้ารู้สึกโชคดีมาก ๆ  
+            ที่ได้ขอที่รักเป็นแฟน
+          </p>
+
+          <p>
+            เพราะที่รักเป็นคนที่น่ารักที่สุด  
+            ทั้งรอยยิ้ม ทั้งหัวใจ 💕
+          </p>
+
+          <p>
+            ไม่ว่าอะไรจะเกิดขึ้น  
+            เค้าจะอยู่ข้าง ๆ ที่รักเสมอ  
+            จับมือกันไปแบบนี้นาน ๆ นะ
+          </p>
+
+          <p>
+            ขอบคุณสำหรับทุกอย่าง  
+            ขอบคุณที่เข้ามาเติมเต็มชีวิตเค้า
+          </p>
+
+          <p>
+            ขอให้ปีนี้เป็นปีที่ใจดีกับที่รัก  
+            และเต็มไปด้วยรอยยิ้มเยอะ ๆ 😊
+          </p>
+
+          <p><b>รักที่รักที่สุดในโลกเยยย ❤️</b></p>
+
+          <p>— สุขสันต์วันวาเลนไทน์ —</p>
+
+	 <img src="photo.jpg" alt="Our Memory">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="envelope"></div>
+  <div class="heart">❤️</div>
+</div>
+
+<audio id="music" src="music.mp3"></audio>
+
+<script>
+const card = document.getElementById("card");
+const music = document.getElementById("music");
+let played = false;
+
+card.addEventListener("click", () => {
+  card.classList.toggle("open");
+
+  if (!played) {
+    music.play();
+    played = true;
+  }
+
+  if (card.classList.contains("open")) {
+    createHearts();
+  }
+});
+</script>
+</body>
+</html>
