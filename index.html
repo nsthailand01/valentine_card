@@ -186,6 +186,57 @@ body {
 .envelope-wrapper:hover .heart {
   opacity: 0;
 }
+/* ===== Responsive สำหรับมือถือ ===== */
+@media (max-width: 480px) {
+
+  .envelope {
+    width: 90vw;
+    height: 60vw;
+  }
+
+  .lid {
+    border-left: 45vw solid transparent;
+    border-right: 45vw solid transparent;
+    border-top: 33vw solid var(--env-flap);
+  }
+
+  .envelope::before {
+    border-left: 45vw solid var(--env-front);
+  }
+
+  .envelope::after {
+    border-right: 45vw solid var(--env-front);
+  }
+
+  .front-flap {
+    border-left: 45vw solid transparent;
+    border-right: 45vw solid transparent;
+    border-bottom: 32vw solid #f8adad;
+  }
+
+  .card {
+    width: 85vw;
+    height: 55vw;
+    left: 2.5vw;
+  }
+
+  .envelope-wrapper:hover .card {
+    transform: translateY(-45vw);
+    height: 75vw;
+  }
+
+  .card-cover h3 {
+    font-size: 1.5rem;
+  }
+
+  .card-content {
+    font-size: 1rem;
+  }
+
+  .heart {
+    font-size: 40px;
+  }
+}
 </style>
 </head>
 
